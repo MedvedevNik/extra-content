@@ -15,6 +15,7 @@
   }
   img {
     width: 100%;
+    border-radius: 0.2em;
   }
   .caption {
     font-size: 0.8em;

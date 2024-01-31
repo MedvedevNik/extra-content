@@ -17,8 +17,8 @@
     margin: 2em 0;
   }
   img {
-    max-width: 900px;
     width: 100%;
+    border-radius: 0.2em;
   }
   .caption {
     font-size: 0.8em;

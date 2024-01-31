@@ -44,6 +44,7 @@ import '@/public/fonts/fonts.css';
     border-radius: 40px;
     width: 80%;
     margin: 80px auto;
+    max-width: 1560px;
   }
   
 
