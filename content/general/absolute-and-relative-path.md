@@ -4,6 +4,12 @@ title: "Пути в коде: абсолютные и относительные
 
 # Пути в коде: абсолютные и относительные
 
+::CCoverImage
+---
+src: /images/general/absolute-and-relative-path/cover.png
+---
+::
+
 Ты уже мастер HTML 😎
 
 Скажи, что нужно добавить в код ниже, чтобы ссылка вела на сайт [ya.ru](https://ya.ru/)?
@@ -240,6 +246,7 @@ src: /images/general/absolute-and-relative-path/10.png
 ::CVideo
 ---
 url: /video/general/absolute-and-relative-path/1.mov
+poster: /video/general/absolute-and-relative-path/1.jpg
 ---
 ::
 
@@ -258,6 +265,7 @@ src: /images/general/absolute-and-relative-path/11.png
 ::CVideo
 ---
 url: /video/general/absolute-and-relative-path/2.mov
+poster: /video/general/absolute-and-relative-path/2.jpg
 ---
 ::
 
@@ -302,6 +310,7 @@ import Component from "./components/Component/Component";
 ::CVideo
 ---
 url: /video/general/absolute-and-relative-path/3.mov
+poster: /video/general/absolute-and-relative-path/3.jpg
 ---
 ::
 
@@ -314,6 +323,7 @@ import Component from "@/app/components/Component/Component.js";
 ::CVideo
 ---
 url: /video/general/absolute-and-relative-path/4.mov
+poster: /video/general/absolute-and-relative-path/4.jpg
 ---
 ::
 
