@@ -1,0 +1,81 @@
+:root {
+  /* --font-main: Abel; */
+  --font-main: 'Work Sans';
+  --font-main-weight: 400;
+  --font-heading-weight: 700;
+
+  --bgc-main: #f3f3f3;
+  --c-main: #1e1e1e;
+
+
+  --s1: clamp(0.125rem, 0.0893rem + 0.1786vw, 0.25rem);
+  --s2: calc(2 * var(--s1));
+  --s3: calc(3 * var(--s1));
+  --s4: calc(4 * var(--s1));
+  --s5: calc(5 * var(--s1));
+  --s6: calc(6 * var(--s1));
+  --s7: calc(7 * var(--s1));
+  --s8: calc(8 * var(--s1));
+  --s9: calc(9 * var(--s1));
+  --s10: calc(10 * var(--s1));
+  --s11: calc(11 * var(--s1));
+  --s12: calc(12 * var(--s1));
+  --s13: calc(13 * var(--s1));
+  --s14: calc(14 * var(--s1));
+  --s15: calc(15 * var(--s1));
+  --s16: calc(16 * var(--s1));
+  --s17: calc(17 * var(--s1));
+  --s18: calc(18 * var(--s1));
+  --s19: calc(19 * var(--s1));
+  --s20: calc(20 * var(--s1));
+  --s21: calc(21 * var(--s1));
+  --s22: calc(22 * var(--s1));
+  --s23: calc(23 * var(--s1));
+  --s24: calc(24 * var(--s1));
+  --s25: calc(25 * var(--s1));
+  --s26: calc(26 * var(--s1));
+  --s27: calc(27 * var(--s1));
+  --s28: calc(28 * var(--s1));
+  --s29: calc(29 * var(--s1));
+  --s30: calc(30 * var(--s1));
+  --s31: calc(31 * var(--s1));
+  --s32: calc(32 * var(--s1));
+  --s33: calc(33 * var(--s1));
+  --s34: calc(34 * var(--s1));
+  --s35: calc(35 * var(--s1));
+
+  --z-layer-1: 1;
+  --z-layer-2: 2;
+  --z-layer-3: 3;
+}
+
+
+
+@media (width <= 768px) {
+  :root {
+    --s1: 3px;
+  }
+}
+
+@media (width <= 650px) {
+  :root {
+    --s1: 3px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bgc-main: #26223d;
+    --c-main: #dffa13;
+  }
+}
+
+.dark-mode {
+  --bgc-main: #26223d;
+  --c-main: #dffa13;
+}
+
+.light-mode {
+  --bgc-main: #f3f3f3;
+  --c-main: #1e1e1e;
+}
