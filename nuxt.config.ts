@@ -36,6 +36,14 @@ export default defineNuxtConfig({
       ],
     }],
   ],
+  content: {
+    highlight: {
+      theme: {
+        // Default theme (same as single string)
+        default: 'github-dark',
+      }
+    }
+  },
   image: {
     format: ['avif', 'webp', 'png', 'jpg'],
     screens: {
@@ -48,12 +56,4 @@ export default defineNuxtConfig({
       '2xl': 1536
     },
   },
-  content: {
-    highlight: {
-      theme: {
-        // Default theme (same as single string)
-        default: 'github-dark',
-      }
-    }
-  }
 })

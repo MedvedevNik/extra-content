@@ -6,8 +6,7 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
-    "deploy": "npm run generate && cd ./dist && rsync --archive --compress --delete . pa7lux@135.181.255.185:/home/pa7lux/www/pa7lux.top"
+    "postinstall": "nuxt prepare"
   },
   "devDependencies": {
     "@nuxt/content": "npm:@nuxt/content-edge@latest",

@@ -24,6 +24,7 @@
                   ...await queryContent<ParsedContent>('/html').find(),
                   ...await queryContent<ParsedContent>('/css').find(),
                   ...await queryContent<ParsedContent>('/js').find(),
+                  ...await queryContent<ParsedContent>('/react').find(),
                   ...await queryContent<ParsedContent>('/node').find(),
                   ...await queryContent<ParsedContent>('/tools').find(),
                 ];
