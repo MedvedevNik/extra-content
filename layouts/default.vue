@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import '@/public/fonts/fonts.css';
+
 </script>
 
 <style>

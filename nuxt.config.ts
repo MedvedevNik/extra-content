@@ -9,6 +9,12 @@ export default defineNuxtConfig({
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
       title: 'Дополнительные материалы к курсу',
+      link: [
+        {
+          rel: 'stylesheet',
+          href: '/fonts/fonts.css',
+        }
+      ]
     }
   },
   ssr: true,

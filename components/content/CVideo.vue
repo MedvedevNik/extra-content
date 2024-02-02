@@ -8,8 +8,8 @@
 
 <script setup lang="ts">
   const props = defineProps<{
-    url: String,
-    poster?: String,
+    url: string,
+    poster?: string,
   }>()
 </script>
 
