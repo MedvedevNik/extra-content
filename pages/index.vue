@@ -17,7 +17,7 @@
 
 
 <script setup lang="ts">
-  import { type ParsedContent } from '@nuxt/content/dist/runtime/types';
+  import type { ParsedContent } from '@nuxt/content/dist/runtime/types';
   const  {data} = await useAsyncData<ParsedContent>('/', () => queryContent('/').findOne())
   const links =  [
                   ...await queryContent<ParsedContent>('/general').find(),
