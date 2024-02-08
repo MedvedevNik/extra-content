@@ -1,4 +1,4 @@
-name: Deploy extra
+name: Deploy https://extra.students-projects.ru/
 
 on:
   workflow_dispatch:
@@ -9,7 +9,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
 
       - name: Deploying
         uses: appleboy/ssh-action@master
@@ -18,21 +19,25 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           script: |
-            # Copy and build new version
-            cp -r extra-app extra-app-new
-            cd extra-app-new
-            git checkout
+            # Copy and build new version of Extra
+
+            export NVM_DIR=/home/${{ secrets.USERNAME }}/.nvm
+            source /home/${{ secrets.USERNAME }}/.nvm/nvm.sh
+            cp -r extra-content extra-content-new
+            cd extra-content-new
+            git checkout main
             git fetch --all
-            git reset --hard
+            git reset --hard origin/main
             npm install
             npm run build
 
-            # Replace current version with the new one
+            # Replace current version of Extra with the new one
+
             cd ..
-            mv extra-app extra-app-old
-            mv extra-app-new extra-app
+            mv extra-content extra-content-old
+            mv extra-content-new extra-content
             # Restart server
-            cd extra-app
-            pm2 kill
+            cd extra-content
+            pm2 delete Extra
             pm2 start "npm run start" --name Extra
-            rm -rf ../extra-app-old
+            rm -rf ../extra-content-old
