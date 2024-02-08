@@ -36,6 +36,6 @@ jobs:
             mv extra-content-new extra-content
             # Restart server
             cd extra-content
-            pm2 kill
+            pm2 delete Extra
             pm2 start "npm run start" --name Extra
             rm -rf ../extra-content-old
