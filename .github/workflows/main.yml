@@ -22,9 +22,11 @@ jobs:
             # Copy and build new version
             export NVM_DIR=/home/${{ secrets.USERNAME }}/.nvm
             source /home/${{ secrets.USERNAME }}/.nvm/nvm.sh
-            cd /home/${{ secrets.USERNAME }}/extra-content
-            git stash
-            git pull origin/test-actions
+            cp -r extra-content extra-content-new
+            cd extra-content-new
+            git checkout main
+            git fetch --all
+            git reset --hard origin/main
             npm install
             npm run build
 
