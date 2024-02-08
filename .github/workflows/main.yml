@@ -25,9 +25,9 @@ jobs:
             cd /home/${{ secrets.USERNAME }}/
             cp -r extra-app extra-app-new
             cd extra-app-new
-            git checkout
+            git checkout test-actions
             git fetch --all
-            git reset --hard
+            git reset --hard origin/test-actions
             npm install
             npm run build
 
