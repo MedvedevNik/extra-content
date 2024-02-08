@@ -24,9 +24,8 @@ jobs:
             source /home/${{ secrets.USERNAME }}/.nvm/nvm.sh
             cd /home/${{ secrets.USERNAME }}/
             cp -r extra-app extra-app-new
-            cd extra-app-new
             git stash
-            git pull
+            git pull origin main
             npm install
             npm run build
 
