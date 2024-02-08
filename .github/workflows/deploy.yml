@@ -1,0 +1,38 @@
+name: Deploy extra
+
+on:
+  workflow_dispatch:
+
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Deploying
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          script: |
+            # Copy and build new version
+            cp -r extra-app extra-app-new
+            cd extra-app-new
+            git checkout
+            git fetch --all
+            git reset --hard
+            npm install
+            npm run build
+
+            # Replace current version with the new one
+            cd ..
+            mv extra-app extra-app-old
+            mv extra-app-new extra-app
+            # Restart server
+            cd extra-app
+            pm2 kill
+            pm2 start "npm run start" --name Extra
+            rm -rf ../extra-app-old
