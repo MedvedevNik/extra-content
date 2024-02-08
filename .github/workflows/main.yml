@@ -23,18 +23,18 @@ jobs:
             export NVM_DIR=/home/${{ secrets.USERNAME }}/.nvm
             source /home/${{ secrets.USERNAME }}/.nvm/nvm.sh
             cd /home/${{ secrets.USERNAME }}/
-            cp -r extra-app extra-app-new
+            cp -r extra-content extra-content-new
             git stash
-            git pull origin main
+            git pull origin
             npm install
             npm run build
 
             # Replace current version with the new one
             cd ..
-            mv extra-app extra-app-old
-            mv extra-app-new extra-app
+            mv extra-content extra-content-old
+            mv extra-content-new extra-content
             # Restart server
-            cd extra-app
+            cd extra-content
             pm2 kill
             pm2 start "npm run start" --name Extra
-            rm -rf ../extra-app-old
+            rm -rf ../extra-content-old
