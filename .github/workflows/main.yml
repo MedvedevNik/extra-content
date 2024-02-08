@@ -24,7 +24,7 @@ jobs:
             source /home/${{ secrets.USERNAME }}/.nvm/nvm.sh
             cd /home/${{ secrets.USERNAME }}/extra-content
             git stash
-            git pull origin
+            git pull origin/test-actions
             npm install
             npm run build
 
