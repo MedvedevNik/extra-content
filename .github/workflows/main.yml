@@ -1,7 +1,9 @@
-name: Deploy https://extra.students-projects.ru/
+name: Deploy extra
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
 
 
 jobs:
