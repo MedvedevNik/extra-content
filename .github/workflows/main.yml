@@ -1,0 +1,45 @@
+name: Deploy extra
+
+on:
+  push:
+    branches:
+      - main
+
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Deploying
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          script: |
+            # Copy and build new version of Extra
+
+            export NVM_DIR=/home/${{ secrets.USERNAME }}/.nvm
+            source /home/${{ secrets.USERNAME }}/.nvm/nvm.sh
+            cp -r extra-content extra-content-new
+            cd extra-content-new
+            git checkout main
+            git fetch --all
+            git reset --hard origin/main
+            npm install
+            npm run build
+
+            # Replace current version of Extra with the new one
+
+            cd ..
+            mv extra-content extra-content-old
+            mv extra-content-new extra-content
+            # Restart server
+            cd extra-content
+            pm2 delete Extra
+            pm2 start "npm run start" --name Extra
+            rm -rf ../extra-content-old

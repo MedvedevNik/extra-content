@@ -1,8 +1,9 @@
 <template>
   <div class="hello article">
     <ContentRenderer v-if="data" :value="data"/>
-    <NuxtPicture
+    <img
       src="/images/index/main.png"
+      alt="собака воет словами Дополнительный материал"
     />
   </div>
   <div class="links article">
